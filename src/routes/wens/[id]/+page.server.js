@@ -24,6 +24,9 @@ export async function load({ params }) {
 				comment {
 					text
 				}
+				reaction {
+					text
+				  }
 				uid
 				id
 			}
