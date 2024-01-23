@@ -133,6 +133,7 @@
 		max-height: 50px;
 		margin: 1em;
 	}
+	
 	.container-susDevGoal {
 		display: flex;
 		flex-direction: row;

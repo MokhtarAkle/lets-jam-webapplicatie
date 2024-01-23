@@ -19,6 +19,20 @@
 		max-height: 50px;
 		margin: 1em;
 	}
+	.susDevGoal:hover {
+		animation-name: grow;
+		animation-duration: 2s;
+		animation-fill-mode: forwards; /* Stop the animation and keep the styles of the last keyframe when finished */
+	}
+
+	@keyframes grow {
+		0% {
+			transform: scale(1);
+		}
+		100% {
+			transform: scale(2);
+		}
+	}
 	.container-susDevGoal {
 		display: flex;
 		flex-direction: row;
