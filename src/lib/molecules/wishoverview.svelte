@@ -2,7 +2,6 @@
 	import WishHeading from '$lib/atoms/wish-heading.svelte';
 	import WishImage from '$lib/atoms/wish-image.svelte';
 
-	
 	export let wish;
 </script>
 
@@ -14,7 +13,9 @@
 		</a>
 		<p>Geplaatst op: {wish.date}</p>
 		<p>Supporters: <span>4</span></p>
-		<img class="susDevGoal" src={wish.image.image.url} alt="Sustainable development goals" />
+		<a href="https://sdgs.un.org/goals">
+			<img class="susDevGoal" src={wish.image.image.url} alt="Sustainable development goals" />
+		</a>
 	</div>
 </li>
 
@@ -24,18 +25,38 @@
 		padding: var(--unit-default);
 		border-radius: var(--unit-small);
 		background-color: var(--color-secundary);
-        list-style: none;
+		list-style: none;
 	}
 
 	.susDevGoal {
-		max-width: 100px;
-		max-height: 100px;
+		max-width: 50px;
+		max-height: 50px;
 		margin: 1em;
 	}
-	
-    .grid-overview li {
+
+	.susDevGoal:hover {
+		animation-name: grow;
+		animation-duration: 2s;
+		animation-fill-mode: forwards; /* Stop the animation and keep the styles of the last keyframe when finished */
+	}
+
+	@keyframes grow {
+		0% {
+			transform: scale(1);
+		}
+		100% {
+			transform: scale(1.5);
+		}
+	}
+	.container-susDevGoal {
+		display: flex;
+		flex-direction: row;
+		margin-left: 2em;
+	}
+
+	.grid-overview li {
 		width: 20rem;
-    }
+	}
 
 	li div {
 		display: flex;
@@ -101,7 +122,7 @@
 
 	.list-overview article li {
 		width: 100%;
-        height: 20rem;
+		height: 20rem;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr;
@@ -125,7 +146,7 @@
 		border: 2px solid var(--color-accent-75);
 		border-radius: var(--unit-small);
 		padding: var(--unit-small);
-        display: grid;
+		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 20rem 1fr;
 	}

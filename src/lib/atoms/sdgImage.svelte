@@ -4,7 +4,9 @@
 	// console.log(data);
 </script>
 
-<img class="susDevGoal" src={data.wish.image.image.url} alt="Sustainable development goals" />
+<a href="https://sdgs.un.org/goals">
+	<img class="susDevGoal" src={data.wish.image.image.url} alt="Sustainable development goals" />
+</a>
 
 <style>
 	.susDevGoal {
