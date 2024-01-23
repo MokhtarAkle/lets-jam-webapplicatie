@@ -63,6 +63,9 @@
                 /></svg>
                 <span>Schakel over op lijstweergave</span>
         </button>
+        <button>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVR4nO2VTQqAIBBGH+TNalMXKzuWc5s6RBG0iszMhH7mwbdxYEbEx4CinMMAPTACA2DXs+xYYNqkjWkgOw1iUgONpyY5B5dA5ak5MtClPnXq5xrWLBcpLnf7Nea1noaQBE9DkZTBR56G4riAevo/zGe8lhv3b9Z9XEZ47bgB9Vp5LjOyUrPUvlDZeAAAAABJRU5ErkJggg==">
+        </button>
     </div>
     <SearchBar {data} />
 </nav>

@@ -129,8 +129,8 @@
 
 	/* Sustainable development goals */
 	.susDevGoal {
-		max-width: 100px;
-		max-height: 100px;
+		max-width: 50px;
+		max-height: 50px;
 		margin: 1em;
 	}
 	.container-susDevGoal {
