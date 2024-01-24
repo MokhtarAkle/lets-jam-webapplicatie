@@ -12,4 +12,8 @@
         -webkit-line-clamp: 2;
         transition: var(--animation-default) ease-in-out;
     }
+    /* h3:hover{
+        background-color: var(--color-blue);
+        color: var(--color-secundary-pure);
+    } */
 </style>

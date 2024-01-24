@@ -8,7 +8,7 @@
 <li>
 	<WishImage {wish} />
 	<div>
-		<a href="wens/{wish.id}">
+		<a class="BackgroundBlue" href="wens/{wish.id}">
 			<WishHeading {wish} />
 		</a>
 		<p>Geplaatst op: {wish.date}</p>
@@ -73,7 +73,7 @@
 		margin-bottom: var(--unit-default);
 	}
 
-	li a:is(:hover, :focus) {
+	.BackgroundBlue:is(:hover, :focus) {
 		color: var(--color-secundary-pure);
 		background-color: var(--color-blue);
 	}
@@ -176,5 +176,9 @@
 	/* Zichtbaarheids instelling */
 	.javascriptEnabledNav {
 		display: flex;
+	}
+
+	h3 {
+		background-color: var(--color-blue);
 	}
 </style>
