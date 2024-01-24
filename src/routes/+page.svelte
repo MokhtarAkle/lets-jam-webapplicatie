@@ -3,6 +3,7 @@
     import SearchBar from '$lib/molecules/searchbar.svelte';
     import WishOverview from '$lib/molecules/wishoverview.svelte';
     import LayoutView from '$lib/molecules/layoutview.svelte';
+    import FilterView from '$lib/molecules/filter.svelte';
     import { onMount } from 'svelte';
 
     export let data;
@@ -38,6 +39,8 @@
 <main>
     <LayoutView {filteredWishes} {searchInput} {searchWishes} />
 
+	<FilterView />
+	
     <section id="custom-view" class="grid-overview wishes">
         <article>
             {#each filteredWishes as wish}
