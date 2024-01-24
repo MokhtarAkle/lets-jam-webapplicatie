@@ -4,6 +4,36 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		const serviceItems = document.querySelector('.service-items');
+		const popup = document.querySelector('.popup-box');
+		const popupCloseBtn = popup.querySelector('.popup-close-btn');
+		const popupCloseIcon = popup.querySelector('.popup-close-icon');
+
+		serviceItems.addEventListener('click', function (event) {
+			if (event.target.tagName.toLowerCase() == 'button') {
+				const item = event.target.parentElement;
+				const h3 = item.querySelector('h3').innerHTML;
+				console.log('yes123');
+				const readMoreCont = item.querySelector('.read-more-cont').innerHTML;
+				popup.querySelector('h3').innerHTML = h3;
+				popup.querySelector('.popup-body').innerHTML = readMoreCont;
+				popupBox();
+			}
+		});
+
+		popupCloseBtn.addEventListener('click', popupBox);
+		popupCloseIcon.addEventListener('click', popupBox);
+
+		popup.addEventListener('click', function (event) {
+			if (event.target == popup) {
+				popupBox();
+			}
+		});
+
+		function popupBox() {
+			popup.classList.toggle('test123');
+		}
+
 		return () => {};
 	});
 </script>
@@ -95,6 +125,7 @@
 				<div class="read-more-cont">
 					<span>
 						Netwerkorganisatie<input
+							class="checkbox"
 							type="checkbox"
 							id="vehicle1"
 							name="vehicle1"
@@ -103,6 +134,7 @@
 					>
 					<span
 						>Vereniging / club<input
+							class="checkbox"
 							type="checkbox"
 							id="vehicle1"
 							name="vehicle1"
@@ -110,10 +142,8 @@
 						/></span
 					>
 					<span
-						>Onderneming<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" /></span
-					>
-					<span>
-						Woningcorporatie<input
+						>Onderneming<input
+							class="checkbox"
 							type="checkbox"
 							id="vehicle1"
 							name="vehicle1"
@@ -121,19 +151,26 @@
 						/></span
 					>
 					<span>
-						Zorginstelling<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" /></span
+						Woningcorporatie<input
+							class="checkbox"
+							type="checkbox"
+							id="vehicle1"
+							name="vehicle1"
+							value="Bike"
+						/></span
+					>
+					<span>
+						Zorginstelling<input
+							class="checkbox"
+							type="checkbox"
+							id="vehicle1"
+							name="vehicle1"
+							value="Bike"
+						/></span
 					>
 					<span
 						>Onderwijsinstellling<input
-							type="checkbox"
-							id="vehicle1"
-							name="vehicle1"
-							value="Bike"
-						/></span
-					>
-					<span> Overheid<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" /></span>
-					<span
-						>Informele groep<input
+							class="checkbox"
 							type="checkbox"
 							id="vehicle1"
 							name="vehicle1"
@@ -141,7 +178,31 @@
 						/></span
 					>
 					<span>
-						Non-profit<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" /></span
+						Overheid<input
+							class="checkbox"
+							type="checkbox"
+							id="vehicle1"
+							name="vehicle1"
+							value="Bike"
+						/></span
+					>
+					<span
+						>Informele groep<input
+							class="checkbox"
+							type="checkbox"
+							id="vehicle1"
+							name="vehicle1"
+							value="Bike"
+						/></span
+					>
+					<span>
+						Non-profit<input
+							class="checkbox"
+							type="checkbox"
+							id="vehicle1"
+							name="vehicle1"
+							value="Bike"
+						/></span
 					>
 				</div>
 			</div>
@@ -174,6 +235,7 @@
 </div>
 
 <h1 class="title-wensen">Alle Wensen<span class="filsort-result">4</span></h1>
+<div class="test123"></div>
 
 <style>
 	img {
@@ -345,9 +407,9 @@
 		opacity: 0;
 		transition: all 0.5s ease-in-out;
 	}
-	.popup-box.open {
-		visibility: visible;
-		opacity: 1;
+	.test123 {
+		visibility: visible !important;
+		opacity: 1 !important;
 	}
 	.popup-box .popup-content {
 		background-color: #ffffff;
@@ -381,7 +443,7 @@
 		cursor: pointer;
 	}
 	.popup-box .popup-body {
-		position: reletive;
+		position: relative;
 		padding: 15px;
 		max-height: 300px;
 		overflow-y: auto;
@@ -389,7 +451,7 @@
 		flex-direction: column;
 	}
 
-	.popup-box .popup-body input[type='checkbox'] {
+	.checkbox  {
 		position: absolute;
 		left: 200px;
 		margin-top: 5px;
