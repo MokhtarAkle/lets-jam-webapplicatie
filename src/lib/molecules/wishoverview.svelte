@@ -11,9 +11,11 @@
 		<a class="BackgroundBlue" href="wens/{wish.id}">
 			<WishHeading {wish} />
 		</a>
-		<p>Geplaatst op: {wish.date}</p>
-		<p>Supporters: <span>4</span></p>
-		<a href="https://sdgs.un.org/goals">
+		<div class="datumGeplaatst">
+			<p>Geplaatst op: {wish.date}</p>
+			<p>Supporters: <span>4</span></p>
+		</div>
+		<a class="sdgImage" href="https://sdgs.un.org/goals">
 			<img class="susDevGoal" src={wish.image.image.url} alt="Sustainable development goals" />
 		</a>
 	</div>
@@ -178,7 +180,7 @@
 		display: flex;
 	}
 
-	h3 {
-		background-color: var(--color-blue);
+	.sdgImage {
+		margin-top: 20px;
 	}
 </style>
