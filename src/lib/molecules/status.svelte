@@ -41,7 +41,7 @@
         background-color: rgba(13, 158, 255, 0.5);
         display: inline-block;
         border-radius: 50%;
-        margin-top: 2.3em
+        margin-top: 3.3em
     }
     #line {
         position: absolute;
@@ -55,6 +55,7 @@
         position: relative;
         display: flex;
         flex-flow: column nowrap;
+        margin-bottom: 2.8em;
     }
 
 </style>
