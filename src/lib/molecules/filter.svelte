@@ -337,7 +337,7 @@
 	.filter-sub-block {
 		padding: 1rem;
 		padding-top: 31px;
-		height: 300px;
+		height: 270px;
 	}
 
 	.filter-sub-block h4 {
