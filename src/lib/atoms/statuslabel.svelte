@@ -66,7 +66,7 @@
         box-shadow: 2px 4px 4px -2px rgba(135, 135, 135, 0.12);
         padding: 1em;
         font-size: 14px;
-        width: 20em;
+        width: 40ch;
         margin-top: 1em;
         background-color: rgb(255, 255, 255);
     }
@@ -125,7 +125,7 @@
         border: 2px solid rgba(13, 158, 255, 0.5);
         padding: 1em;
         font-size: 14px;
-        width: 20em;
+        width: min(100%, 75ch);
         margin-top: 1em;
         background-color: rgb(247, 247, 247);
         box-shadow: 6px 6px 6px -2px rgba(135, 135, 135, 0.12);
