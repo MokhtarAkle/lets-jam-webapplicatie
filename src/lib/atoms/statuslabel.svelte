@@ -130,6 +130,8 @@
         background-color: rgb(247, 247, 247);
         box-shadow: 6px 6px 6px -2px rgba(135, 135, 135, 0.12);
         border-radius: 5px;
+        text-wrap: balance;
+        
     }
 
     .reaction-text:nth-of-type(even){
