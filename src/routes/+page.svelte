@@ -59,6 +59,13 @@
 		background-color: var(--color-accent-75);
 	}
 
+	@media (min-width: 42rem) {
+		.grid-overview article {
+			width: fit-content;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
 	article {
 		display: grid;
 		grid-template-columns: 1fr;

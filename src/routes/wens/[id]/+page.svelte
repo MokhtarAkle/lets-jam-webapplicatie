@@ -15,7 +15,7 @@
 <Navbar />
 
 <main>
-	<span>
+	<span class="btn-back">
 		<a href="/"
 			><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
 				><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -68,6 +68,13 @@
 		background-color: var(--color-accent-50);
 	}
 
+	@media (max-width: 600px) {
+		main {
+			padding: 0;
+			padding-top: 25px;
+		}
+	}
+
 	section {
 		max-width: 38rem;
 		display: flex;
@@ -75,11 +82,21 @@
 		margin-left: 20%;
 		background-color: white;
 	}
+	@media screen and (width < 600px) {
+		section {
+			margin: auto;
+			margin-top: 1.5em;
+		}
+	}
 
 	mark {
 		padding: 0em 0em 2em 3em;
 		border: none;
 		margin-bottom: var(--unit-default);
+	}
+
+	.btn-back{
+		margin-left: 15px;
 	}
 
 	time {
