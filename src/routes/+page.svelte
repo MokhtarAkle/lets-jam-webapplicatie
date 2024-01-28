@@ -39,7 +39,7 @@
 <main>
     <LayoutView {filteredWishes} {searchInput} {searchWishes} />
 
-	<!-- <FilterView /> -->
+	<FilterView />
 	
     <section id="custom-view" class="grid-overview wishes">
         <article>
