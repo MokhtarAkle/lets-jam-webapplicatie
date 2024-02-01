@@ -18,11 +18,15 @@
 
     });
     </script>
-    
-    <section>
+
+    <section class="label-container">
 
     {#each data.statusupdates as statusupdate}
-    
+    <div>
+        
+    <span id="circle"></span>
+    <span id="line"></span>
+    </div>
     <p class="status-update">{statusupdate.comment.text}</p>
     <div class="comment-viewer">{statusupdate.reaction.length} Reacties...</div>
     <div class="comment-hidden comment-style">{#each statusupdate.reaction as reaction}
@@ -37,7 +41,8 @@
             
         {/each}       
         <form>
-            <input type="text" name="comment" id="comment">
+            <textarea class="comment" placeholder="Jouw reactie hier...."></textarea>
+            <p class="role-header">Selecteer je rol:</p>
             <div id="radio-sorter">
             <input type="radio" id="option-trekker">
             <label for="option-trekker"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="800" height="800" viewBox="0 0 512 512"><path d="M143.891 239.572c53.747 0 97.473-43.725 97.473-97.472s-43.725-97.472-97.473-97.472c-53.747 0-97.472 43.725-97.472 97.472s43.725 97.472 97.472 97.472zm0-158.825c33.83 0 61.352 27.522 61.352 61.351s-27.522 61.351-61.352 61.351-61.351-27.522-61.351-61.351c0-33.828 27.521-61.351 61.351-61.351zM368.109 239.572c53.747 0 97.472-43.725 97.472-97.472s-43.725-97.472-97.472-97.472-97.473 43.725-97.473 97.472c.001 53.746 43.727 97.472 97.473 97.472zm0-158.825c33.83 0 61.351 27.522 61.351 61.351s-27.522 61.351-61.351 61.351-61.352-27.522-61.352-61.351c.001-33.828 27.523-61.351 61.352-61.351z"/><path d="M255.995 310.254C171.658 205.199 0 264.747 0 400.513v48.799c0 9.974 8.086 18.06 18.06 18.06h475.88c9.974 0 18.06-8.086 18.06-18.06v-48.799c0-135.808-171.777-195.224-256.005-90.259zm-4.341 120.997H36.121v-30.739c0-59.42 48.346-107.76 107.772-107.76 59.988 0 107.76 48.534 107.76 107.76v30.739zm224.225 0H287.774c0-33.754 2.149-55.077-11.501-87.179 19.558-31.862 54.011-51.32 91.833-51.32 59.426 0 107.772 48.34 107.772 107.76v30.739z"/></svg>
@@ -51,7 +56,12 @@
             <label for="option-deler"><svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="-1 0 26 26"><path fill="#000" fill-rule="evenodd" d="M19 24a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM5 16a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM19 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 14c-1.77 0-3.315.925-4.204 2.312l-5.355-3.06c.346-.68.559-1.438.559-2.252 0-.503-.097-.979-.235-1.437l5.571-3.183A4.97 4.97 0 0 0 19 10a5 5 0 0 0 5-5 5 5 0 0 0-5-5 5 5 0 0 0-5 5c0 .503.097.979.235 1.438L8.664 9.62A4.973 4.973 0 0 0 5 8a5 5 0 0 0-5 5 5 5 0 0 0 5 5c1.14 0 2.179-.396 3.02-1.038L8 17l6.055 3.46c-.02.18-.055.354-.055.54a5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
             Deler</label>
         </div>
-            <input type="file" id="myfile" name="myfile">
+
+            <div class="file-input">
+            <input type="file" id="file" name="myfile">
+            <label for="file">Selecteer bestand</label>
+        </div>
+
             <input type="submit" value="Reageer!" id="submit-confirm">
 
         </form>
@@ -60,6 +70,30 @@
         </section>
         <div class="comment-viewable"></div>
     <style>
+
+    #line {
+        position: absolute;
+        top: 50%; 
+        transform: translate(-1800%, -50%);
+        width: .4em;
+        height: 94%;
+        background-color: skyblue;
+}
+    #circle{
+        width: 2em;
+        height: 2em;
+        background-color:  skyblue;
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        left: -8em;
+        margin-top: 1.45em;
+    }
+
+    #circle:nth-of-type(1){
+        margin-top: 1.9em;
+
+    }
     .status-update{
         border: 1px solid rgba(13, 158, 255, 0.5);
         border-radius: 20px;
@@ -105,7 +139,8 @@
         width: 20px;
         height: 20px;
         fill: rgb(128, 128, 128);
-
+        margin-top: 0.8em;
+        margin-left: 0.3em;
     }
 
     .comment-hidden{
@@ -177,6 +212,9 @@
     img{
         width: 3em;
     }
+    .role-header{
+        font-weight: bold;
+    }
     form{
         width: 20em;
         border-top: 1px solid black;
@@ -184,10 +222,15 @@
         margin: 1.5em -1em -1em -1em;
     }
 
-    #comment{
-        padding: 3em;
+    .comment{
+        width: 250px;
+        height: 125px;
+        padding: 5px;
     }
 
+    textarea:focus::placeholder {
+        color: transparent;
+    }
     input{
         margin-bottom: 1em;
     }
@@ -199,13 +242,49 @@
     input[type="file"]{
         margin-top: 1em;
     }
+
+    #file{
+        opacity: 0;
+        width: 0.1px;
+        height: 0.1px;
+        position: absolute;
+    }
+
+    .file-input label{
+        display: block;
+        position: relative;
+        width: 12em;
+        height: 3em;
+        margin: 1em 0em 1em 0em;
+        border-radius: 25px;
+        background: rgba(13, 158, 255, 0.5);
+        box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform .2s ease-out;
+    }
+
+    #file:hover + label,
+    #file:focus + label,
+    input[type="submit"]:hover {           
+        transform: scale(1.02);
+    }
+
     #submit-confirm{
         padding: 0.7em;
-        border-radius: 10px;
+        border-radius: 25px;
         background-color: rgba(13, 158, 255, 0.5);
-        box-shadow: 5px 5px 5px -2px rgba(135, 135, 135, 0.12);
-        border-width: 1px;
+        box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+        color: white;
+        border-width: 0px;
         font-weight: bold;
+        font-family: 'Poppins';
+        transition: transform .2s ease-out;
+
     }
 
     #comment{
@@ -216,8 +295,8 @@
 
     #radio-sorter{
         display: flex;
-        flex-flow: row wrap;
-        width: 5em;
+        flex-flow: row nowrap;
+        width: 3em;
     }
     </style>
     

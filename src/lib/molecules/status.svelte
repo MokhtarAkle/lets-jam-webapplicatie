@@ -2,24 +2,40 @@
 	import Statusdatum from '$lib/atoms/statusdatum.svelte';
     import Statuslabel from '$lib/atoms/statuslabel.svelte';
     import Risico from '$lib/atoms/risico.svelte'
+    import { onMount } from 'svelte';
 	export let data;
-	// console.log(load.status);
+//     onMount(() => { 
+
+//     let lineDetect = document.querySelector('#line');
+//     let boxDetect = document.querySelector('.test-container');
+//     const style = getComputedStyle(boxDetect);
+//     function detectChange(){
+//         if(parseInt(style.height) > 750){
+//             lineDetect.style.top = "45%";
+//         }
+//         else{
+//             lineDetect.style.top = "50%";
+//         }
+//         console.log(parseInt(style.height))
+
+//     }
+//     boxDetect.addEventListener("click", detectChange);
+
+
+// });
 </script>
 <h2>Status wens</h2>
 <Risico />
 <section>
 
     <Statusdatum {data}/>
+    <div class="test-container">
     <div title="status line container">
-    {#each data.statusupdates as statusupdate}
 
-        <span id="circle"></span>
-        <span id="line"></span>
 
-            {/each}
         </div>
     <Statuslabel {data}/>
-
+</div>
 
 </section>
 
@@ -45,10 +61,10 @@
     }
     #line {
         position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -40%);
+        top: 50%; 
+        transform: translate(-550%, -42%);
         width: .4em;
-        height: 70%;
+        height: 95%;
         background-color: skyblue;
 }
     div{
@@ -56,6 +72,10 @@
         display: flex;
         flex-flow: column nowrap;
         margin-bottom: 2.8em;
+        height: auto;
     }
 
+    .test-container{
+        flex-flow: row wrap;
+    }
 </style>
