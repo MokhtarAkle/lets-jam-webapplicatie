@@ -24,9 +24,19 @@ export async function load({ params }) {
 				comment {
 					text
 				}
+				reaction {
+					text
+				  }
 				uid
 				id
 			}
+			personens {
+				beschrijving
+				image {
+				  url
+				}
+				name
+			  }
 		}
 	`;
 
@@ -36,7 +46,8 @@ export async function load({ params }) {
 
 	return {
 		wish: request.wish, // Hier halen we de enkele wens op
-		statusupdates: request.statusUpdates
+		statusupdates: request.statusUpdates,
+		personens: request.personens
 	};
 }
 
